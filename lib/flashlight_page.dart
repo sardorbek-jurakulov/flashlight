@@ -15,9 +15,15 @@ class _FlashLightState extends State<FlashLight> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.black,
         body: ListView(
           children: [
-            Text("Flashlight is $fleshlightStatus"),
+            Text(
+              "Flashlight is $fleshlightStatus",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
             Image.asset((fleshlightStatus == "off")
                 ? "assets/images/flashlight_off.jpg"
                 : "assets/images/flashlight_on.jpg"),
