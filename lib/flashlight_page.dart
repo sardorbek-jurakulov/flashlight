@@ -8,18 +8,28 @@ class FlashLight extends StatefulWidget {
 }
 
 class _FlashLightState extends State<FlashLight> {
+  String fleshlightStatus = "off";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: ListView(
           children: [
-            const Text("Flashlight is on/off"),
+            Text("Flashlight is $fleshlightStatus"),
             Image.asset("assets/images/flashlight_off.jpg"),
           ],
         ),
         floatingActionButton: FloatingActionButton(
-            onPressed: () {}, child: Icon(Icons.arrow_back)),
+            onPressed: () {
+              setState(() {
+                if (fleshlightStatus == "off") {
+                  fleshlightStatus = "on";
+                } else if (fleshlightStatus == "on") {
+                  fleshlightStatus = "off";
+                }
+              });
+            },
+            child: Icon(Icons.arrow_back)),
       ),
     );
   }
