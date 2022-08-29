@@ -9,6 +9,8 @@ class FlashLight extends StatefulWidget {
 
 class _FlashLightState extends State<FlashLight> {
   String fleshlightStatus = "off";
+  String flashlightImageOn = "assets/images/flashlight_on.jpg";
+  String flashlightImageOff = "assets/images/flashlight_off.jpg";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -16,7 +18,9 @@ class _FlashLightState extends State<FlashLight> {
         body: ListView(
           children: [
             Text("Flashlight is $fleshlightStatus"),
-            Image.asset("assets/images/flashlight_off.jpg"),
+            Image.asset((fleshlightStatus == "off")
+                ? "assets/images/flashlight_off.jpg"
+                : "assets/images/flashlight_on.jpg"),
           ],
         ),
         floatingActionButton: FloatingActionButton(
