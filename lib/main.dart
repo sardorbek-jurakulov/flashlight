@@ -28,10 +28,11 @@ class MyApp extends StatelessWidget {
 // git status
 
 
-// git remote add origin main "https://github.com/sardorbek-jurakulov/my_number_pad.git";
+// git remote add origin "https://github.com/sardorbek-jurakulov/flashlight.git";
 // git pull origin main --allow-unrelated-histories
 // git push -u origin main
 // git config --glob user.name="sardor-juraku"
 // git config --glob user.email=""
+// git remote -v
 
 // git clone https://github.com/sardorbek-jurakulov/my_number_pad.git
