@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:flutter/cupertino.dart";
 
 class FlashLight extends StatefulWidget {
   const FlashLight({Key? key}) : super(key: key);
@@ -30,16 +31,29 @@ class _FlashLightState extends State<FlashLight> {
           ],
         ),
         floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              setState(() {
-                if (fleshlightStatus == "off") {
-                  fleshlightStatus = "on";
-                } else if (fleshlightStatus == "on") {
-                  fleshlightStatus = "off";
-                }
-              });
-            },
-            child: Icon(Icons.arrow_back)),
+          onPressed: () {
+            setState(() {
+              if (fleshlightStatus == "off") {
+                fleshlightStatus = "on";
+              } else if (fleshlightStatus == "on") {
+                fleshlightStatus = "off";
+              }
+            });
+          },
+          // child: Icon(
+          //   (fleshlightStatus == "off")
+          //       ? Icons.flashlight_on_rounded
+          //       : Icons.flashlight_off_rounded,
+          //   color: Colors.black,
+          // ),
+          child: Icon(
+            fleshlightStatus == "off"
+                ? CupertinoIcons.lightbulb_fill
+                : CupertinoIcons.lightbulb_slash_fill,
+            color: Colors.black,
+          ),
+          backgroundColor: Colors.white,
+        ),
       ),
     );
   }
